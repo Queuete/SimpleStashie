@@ -58,6 +58,10 @@ namespace SimpleStashie
             try
             {
                 Input.KeyDown(Keys.LControlKey);
+                if (Settings.IgnoreAffinities)
+                {
+                    Input.KeyDown(Keys.LShiftKey);
+                }
                 foreach (var item in items)
                 {
                     if (SlotIsIgnored(item.InventPosX, item.InventPosY)) continue;
@@ -78,6 +82,10 @@ namespace SimpleStashie
             finally
             {
                 Input.KeyUp(Keys.LControlKey);
+                if (Settings.IgnoreAffinities)
+                {
+                    Input.KeyUp(Keys.LShiftKey);
+                }
                 IsRunning = false;
             }
         }
