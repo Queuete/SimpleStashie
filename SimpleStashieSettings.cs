@@ -9,6 +9,9 @@ namespace SimpleStashie
     {
         public ToggleNode Enable { get; set; } = new ToggleNode(true);
 
+        [Menu("Ignore Stash Affinities")]
+        public ToggleNode IgnoreAffinities { get; set; } = new ToggleNode(false);
+
         [Menu("Stash Inventory Hotkey")]
         public HotkeyNode StashItKey { get; set; } = new HotkeyNode(Keys.F2);
 
